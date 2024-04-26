@@ -5,7 +5,13 @@ public class FactorialCalculator {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a number to calculate its factorial: ");
-        int number = scanner.nextInt();
+        int number = 0;
+        try {
+            number = scanner.nextInt();
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
+            System.exit(1);
+        }
 
         int factorial = calculateFactorial(number);
         System.out.println("Factorial of " + number + " is: " + factorial);
